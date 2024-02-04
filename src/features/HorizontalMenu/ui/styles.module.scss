@@ -1,2 +1,23 @@
 .horizontal_menu {
+  width: 100px;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(70px, 7.2912vw, 280px);
+  @apply bg-primary-ALMOST_WHITE;
+
+  &__logo {
+    width: clamp(32px, 3.33312vw, 128px);
+    height: clamp(32px, 3.33312vw, 128px);
+    @apply mt-8;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 2.49984vw, 96px);
+  }
 }
