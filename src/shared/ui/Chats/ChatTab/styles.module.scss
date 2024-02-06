@@ -1,0 +1,49 @@
+.chat_tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s all;
+  @apply text-secondary;
+  @apply pt-3;
+  @apply pl-3;
+  @apply pr-3;
+  @apply pb-3;
+
+  &__upper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s all;
+
+    &__title {
+      font-weight: 700;
+      font-size: clamp(9px, 0.93744vw, 36px);
+    }
+
+    &__time {
+      font-size: clamp(7px, 0.72912vw, 28px);
+    }
+  }
+
+  &__message {
+    transition: 0.3s all;
+    font-size: clamp(8px, 0.83328vw, 32px);
+    @apply mt-2;
+  }
+
+  &:hover {
+    @apply bg-primary;
+  }
+
+  &:hover &__upper {
+    color: white;
+  }
+
+  &:hover &__message {
+    color: white;
+  }
+}

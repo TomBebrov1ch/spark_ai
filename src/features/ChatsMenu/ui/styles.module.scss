@@ -1,0 +1,10 @@
+.chats_menu {
+  width: clamp(200px, 20.832vw, 800px);
+  overflow-y: auto;
+  @apply bg-white;
+  @apply text-secondary;
+  @apply ml-8;
+
+  &__upper {
+  }
+}

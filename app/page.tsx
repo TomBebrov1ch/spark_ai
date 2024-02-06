@@ -1,10 +1,12 @@
 import { HorizontalMenu } from "@features/HorizontalMenu/ui";
-import React from "react";
+
+import "../src/shared/styles/global.scss";
+import { Navigation } from "@widgets/Navigation/ui";
 
 const MainPage = () => {
   return (
     <div>
-      <HorizontalMenu />
+      <Navigation />
     </div>
   );
 };

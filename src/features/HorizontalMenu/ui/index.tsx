@@ -2,11 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import { MenuButton } from "@shared/ui/MenuButton";
+import { faMessage } from "@fortawesome/free-regular-svg-icons";
+
 import logo from "@assets/logo/logo.png";
 
 import styles from "./styles.module.scss";
-import { MenuButton } from "@shared/ui/MenuButton";
-import { faMessage } from "@fortawesome/free-regular-svg-icons";
 
 export const HorizontalMenu = () => {
   return (

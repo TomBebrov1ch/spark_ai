@@ -11,7 +11,11 @@ interface MenuButtonProps {
 export const MenuButton: React.FC<MenuButtonProps> = ({ icon }) => {
   return (
     <button className={styles.menu_button}>
-      <FontAwesomeIcon className={styles.menu_button__icon} icon={icon} />
+      <FontAwesomeIcon
+        className={styles.menu_button__icon}
+        icon={icon}
+        size="2xs"
+      />
     </button>
   );
 };
