@@ -1,18 +1,17 @@
-import { DataTypes, Model, Optional } from "sequelize";
+import { Model, DataTypes, Optional } from "sequelize";
 import sequelize from "@config/sequelize";
-import bcryptjs from "bcryptjs";
+
+const bcryptjs = require("bcryptjs");
 
 const saltRounds = 10;
 
-// These are all the attributes in the User model
 interface UserAttributes {
   id: number;
   username: string;
   email: string;
-  password: string; // Add password attribute
+  password: string;
 }
 
-// Some attributes are optional in `User.build` and `User.create` calls
 interface UserCreationAttributes extends Optional<UserAttributes, "id"> {}
 
 class User
@@ -22,7 +21,7 @@ class User
   public id!: number;
   public username!: string;
   public email!: string;
-  public password!: string; // Add password attribute
+  public password!: string;
 
   // Timestamps
   public readonly createdAt!: Date;

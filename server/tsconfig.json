@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "esModuleInterop": true,
     "baseUrl": ".", // This must be set if "paths" are set
     "paths": {
       "@api/*": ["./api/*"],

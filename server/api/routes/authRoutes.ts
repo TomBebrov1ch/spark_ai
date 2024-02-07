@@ -1,9 +1,5 @@
-import express from "express";
-import bcryptjs from "bcryptjs";
-import jwt from "jsonwebtoken";
-import User from "@models/userModel"; // Adjust the import path as necessary
 import UserController from "@controllers/authController";
-
+const bcryptjs = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
 

@@ -1,8 +1,7 @@
 import "module-alias/register";
-import * as dotenv from "dotenv";
 
 // Libraries
-require("dotenv").config({ path: ".env" });
+const dotenv = require("dotenv").config({ path: ".env" });
 const express = require("express");
 const bcryptjs = require("bcryptjs");
 
