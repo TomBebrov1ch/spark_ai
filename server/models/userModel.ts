@@ -1,5 +1,8 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import sequelize from "@config/sequelize";
+import bcryptjs from "bcryptjs";
+
+const saltRounds = 10;
 
 // These are all the attributes in the User model
 interface UserAttributes {
@@ -28,7 +31,6 @@ class User
 
 User.init(
   {
-    // Model attributes are defined here
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
@@ -44,18 +46,25 @@ User.init(
       unique: true,
     },
     password: {
-      type: new DataTypes.STRING(256), // You might choose a different length depending on the hash algorithm
+      type: new DataTypes.STRING(256),
       allowNull: false,
     },
   },
   {
     tableName: "users",
-    sequelize, // passing the `sequelize` instance is required
-    // If you want to add hooks for hashing the password
+    sequelize,
+    modelName: "user",
     hooks: {
-      beforeCreate: (user: User) => {
-        // Hash the password here
-        // e.g., user.password = hashFunction(user.password);
+      beforeCreate: async (user) => {
+        try {
+          console.log("Hashing password for user:", user.email);
+          const hashedPassword = await bcryptjs.hash(user.password, saltRounds);
+          console.log(hashedPassword);
+          user.password = hashedPassword;
+        } catch (error) {
+          console.error("Error hashing password:", error);
+          throw error;
+        }
       },
     },
   }

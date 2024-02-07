@@ -4,7 +4,10 @@ import * as dotenv from "dotenv";
 // Libraries
 require("dotenv").config({ path: ".env" });
 const express = require("express");
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
+
+// Routes
+import authRoutes from "@api/routes/authRoutes";
 
 // Models
 const User = require("@models/userModel");
@@ -16,6 +19,9 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
+
+// Routes:
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req: any, res: any) => {
   res.send("Hello World!");

@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "@models/userModel";
 
@@ -13,8 +13,7 @@ const register = async (req, res) => {
   }
 
   try {
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-
+    const hashedPassword = await bcryptjs.hash(password, saltRounds);
     const newUser = await User.create({
       username,
       email,
@@ -42,7 +41,8 @@ const login = async (req, res) => {
         .json({ message: "Authentication failed. User not found." });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcryptjs.compare(password, user.password);
+    console.log(user.password);
 
     if (!isMatch) {
       return res
