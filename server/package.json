@@ -22,14 +22,17 @@
     "@config": "./config"
   },
   "imports": {
-    "@api": "./server/api",
-    "@controllers": "./server/api/controllers",
-    "@middleware": "./server/api/middleware",
-    "@models": "./server/models",
-    "@config": "./server/config"
+    "@api": "./api",
+    "@controllers": "./api/controllers",
+    "@middleware": "./middleware",
+    "@models": "./models",
+    "@config": "./config"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "module-alias": "^2.2.3",
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
