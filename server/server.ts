@@ -1,3 +1,4 @@
+import "module-alias/register";
 const express = require("express");
 const { Pool } = require("pg");
 
@@ -11,12 +12,4 @@ app.get("/", (res: any) => {
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
-});
-
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "SPARK_AI",
-  password: "2005",
-  port: 5432,
 });

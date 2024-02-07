@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // This must be set if "paths" are set
+    "paths": {
+      "@api/*": ["./api/*"],
+      "@controllers/*": ["./api/controllers/*"],
+      "@middleware/*": ["./api/middleware/*"],
+      "@models/*": ["./models/*"],
+      "@config/*": ["./config/*"]
+    }
+  }
+}
