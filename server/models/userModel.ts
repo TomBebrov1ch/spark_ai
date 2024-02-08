@@ -2,7 +2,6 @@ import { Model, DataTypes, Optional } from "sequelize";
 import sequelize from "@config/sequelize";
 
 const bcryptjs = require("bcryptjs");
-
 const saltRounds = 10;
 
 interface UserAttributes {
@@ -53,19 +52,19 @@ User.init(
     tableName: "users",
     sequelize,
     modelName: "user",
-    hooks: {
-      beforeCreate: async (user) => {
-        try {
-          console.log("Hashing password for user:", user.email);
-          const hashedPassword = await bcryptjs.hash(user.password, saltRounds);
-          console.log(hashedPassword);
-          user.password = hashedPassword;
-        } catch (error) {
-          console.error("Error hashing password:", error);
-          throw error;
-        }
-      },
-    },
+    // hooks: {
+    //   beforeCreate: async (user) => {
+    //     try {
+    //       console.log("Hashing password for user:", user.email);
+    //       const hashedPassword = await bcryptjs.hash(user.password, saltRounds);
+    //       console.log(hashedPassword);
+    //       user.password = hashedPassword;
+    //     } catch (error) {
+    //       console.error("Error hashing password:", error);
+    //       throw error;
+    //     }
+    //   },
+    // },
   }
 );
 

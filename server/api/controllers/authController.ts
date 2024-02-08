@@ -1,15 +1,12 @@
+import User from "@models/userModel";
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-import User from "@models/userModel";
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const saltRounds = 10;
 
 const register = async (req, res) => {
   const { username, email, password, confirmPassword } = req.body;
-
-  console.log("password:", password);
-  console.log("confirm password:", confirmPassword);
 
   if (password !== confirmPassword) {
     return res.status(400).json({ message: "Passwords do not match." });
@@ -45,8 +42,14 @@ const login = async (req, res) => {
     }
 
     const isMatch = await bcryptjs.compare(password, user.password);
+
     console.log("password:", password);
     console.log("userPassword:", user.password);
+    console.log("user is match:", isMatch);
+
+    console.log(
+      `Password lengths - Input: ${password.length}, Hashed: ${user.password.length}`
+    );
 
     if (!isMatch) {
       return res
