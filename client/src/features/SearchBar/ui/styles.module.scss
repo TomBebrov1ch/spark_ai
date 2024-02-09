@@ -1,0 +1,42 @@
+.relative_form {
+  width: clamp(150px, 15.624vw, 600px);
+  height: clamp(22.5px, 2.3436vw, 90px);
+  position: relative;
+  margin: auto;
+}
+
+.search_bar {
+  width: 85%;
+  height: 100%;
+  border: none;
+  @apply text-sm;
+  @apply rounded-lg;
+  @apply bg-primary-TRANSPARENT;
+  @apply pl-10;
+  @apply pr-3;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search_label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  @apply top-3;
+  @apply left-3;
+  @apply bottom-2;
+
+  &__icon {
+    @apply text-base;
+    @apply text-primary;
+    @apply pb-1;
+  }
+
+  &__text {
+    @apply text-sm;
+    @apply ml-3;
+    @apply pb-1;
+  }
+}
