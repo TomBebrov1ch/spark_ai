@@ -5,6 +5,7 @@ import { createServer } from "http";
 const dotenv = require("dotenv").config({ path: ".env" });
 const express = require("express");
 const bcryptjs = require("bcryptjs");
+const initializeSocket = require("./sockets/socket");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger-output.json");
@@ -23,24 +24,12 @@ const port = process.env.PORT;
 
 const http = require("http");
 const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
 const ioPort = 7000;
 
-// Socket.IO event handling
-io.on("connection", (socket) => {
-  console.log("A user connected");
-  socket.on("disconnect", () => {
-    console.log("A user disconnected");
-  });
-
-  socket.on("message", (data) => {
-    socket.emit("response", data);
-  });
-});
+initializeSocket(server);
 
 server.listen(ioPort, () => {
-  console.log(`Socket listeting on ${ioPort}`);
+  console.log(`Server listening at http://localhost:${ioPort}`);
 });
 
 app.use(express.json());
