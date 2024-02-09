@@ -14,6 +14,7 @@
 
   &__input {
     width: 80%;
+    outline: none;
     @apply text-base;
     @apply text-secondary;
     &:hover {

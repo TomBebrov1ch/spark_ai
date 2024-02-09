@@ -1,8 +1,9 @@
 import React from "react";
 import { ChatTab } from "@shared/ui/Chats/ChatTab";
+import { SearchBar } from "@features/SearchBar/ui/Searchbar.client";
 
 import styles from "./styles.module.scss";
-import { SearchBar } from "@features/SearchBar/ui/Searchbar.client";
+
 // import { AddButton } from "@shared/ui/AddButton/index.client";
 
 export const ChatsMenu = () => {

@@ -1,21 +1,21 @@
 "use client";
 import React, { ChangeEvent, useState, useRef, useEffect } from "react";
-
-import styles from "./styles.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSearchLocation } from "@fortawesome/free-solid-svg-icons";
+
+import styles from "./styles.module.scss";
 
 export const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [isLabelVisible, setLabelVisible] = useState(true);
-  const inputRef = useRef<HTMLInputElement>(null); // Correctly initialize the ref
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
   const handleInputBlur = () => {
-    setLabelVisible(query === ""); // Hide if query is empty, show otherwise
+    setLabelVisible(query === "");
   };
 
   useEffect(() => {

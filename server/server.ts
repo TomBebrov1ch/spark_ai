@@ -5,6 +5,9 @@ const dotenv = require("dotenv").config({ path: ".env" });
 const express = require("express");
 const bcryptjs = require("bcryptjs");
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger-output.json");
+
 // Routes
 import authRoutes from "@api/routes/authRoutes";
 
@@ -21,6 +24,7 @@ app.use(express.json());
 
 // Routes:
 app.use("/api/auth", authRoutes);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get("/", (req: any, res: any) => {
   res.send("Hello World!");

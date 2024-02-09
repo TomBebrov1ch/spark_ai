@@ -1,9 +1,9 @@
 import React from "react";
-
-import styles from "./styles.module.scss";
 import { Header } from "@entities/Header/ui";
 import { TextField } from "@features/TextField/ui";
 import { MessageBubble } from "@shared/ui/MessageBubble";
+
+import styles from "./styles.module.scss";
 
 export const ChatWindow = () => {
   return (

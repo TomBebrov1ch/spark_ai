@@ -1,0 +1,4 @@
+[services.api]
+root = "server"
+buildCommand = "npm install"
+startCommand = "npm start"
