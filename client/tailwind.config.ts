@@ -12,6 +12,7 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: "#FF5722",
+          BG_LIGHT: "#FFF3EF",
           TRANSPARENT: "rgba(255, 87, 34, 0.25)",
           ALMOST_WHITE: "#FAFAFA",
           dark: "#E65100",

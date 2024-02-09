@@ -14,7 +14,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({ icon }) => {
       <FontAwesomeIcon
         className={styles.menu_button__icon}
         icon={icon}
-        size="2xs"
+        size="xl"
       />
     </button>
   );

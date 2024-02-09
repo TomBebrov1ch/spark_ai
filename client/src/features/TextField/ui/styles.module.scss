@@ -1,0 +1,23 @@
+.text_field {
+  width: 50%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  right: 10%;
+  @apply text-base;
+  @apply bg-white;
+  @apply text-secondary;
+  @apply p-4;
+  @apply rounded-lg;
+  @apply bottom-6;
+
+  &__input {
+    width: 80%;
+  }
+
+  &__icon {
+    @apply text-lg;
+    @apply text-primary;
+  }
+}

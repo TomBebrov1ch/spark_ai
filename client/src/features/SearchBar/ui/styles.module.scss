@@ -3,6 +3,7 @@
   height: clamp(22.5px, 2.3436vw, 90px);
   position: relative;
   margin: auto;
+  @apply mb-16;
 }
 
 .search_bar {

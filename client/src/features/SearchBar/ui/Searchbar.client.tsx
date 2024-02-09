@@ -48,6 +48,7 @@ export const SearchBar = () => {
         className={styles.search_bar}
         type="text"
         id="searchBar"
+        autoComplete="off"
         value={query}
         onChange={handleInputChange}
       />
