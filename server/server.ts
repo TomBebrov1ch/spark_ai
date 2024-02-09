@@ -1,4 +1,5 @@
 import "module-alias/register";
+import { createServer } from "http";
 
 // Libraries
 const dotenv = require("dotenv").config({ path: ".env" });
@@ -19,6 +20,28 @@ const { Pool } = require("pg");
 
 const app = express();
 const port = process.env.PORT;
+
+const http = require("http");
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+const ioPort = 7000;
+
+// Socket.IO event handling
+io.on("connection", (socket) => {
+  console.log("A user connected");
+  socket.on("disconnect", () => {
+    console.log("A user disconnected");
+  });
+
+  socket.on("message", (data) => {
+    socket.emit("response", data);
+  });
+});
+
+server.listen(ioPort, () => {
+  console.log(`Socket listeting on ${ioPort}`);
+});
 
 app.use(express.json());
 
