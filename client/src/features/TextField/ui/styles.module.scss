@@ -14,10 +14,20 @@
 
   &__input {
     width: 80%;
+    @apply text-base;
+    @apply text-secondary;
+    &:hover {
+      outline: none;
+    }
   }
 
   &__icon {
+    cursor: pointer;
+    transition: 0.3s all;
     @apply text-lg;
     @apply text-primary;
+    &:hover {
+      @apply text-functional;
+    }
   }
 }

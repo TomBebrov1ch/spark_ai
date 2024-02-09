@@ -1,0 +1,33 @@
+.message_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__user {
+    position: absolute;
+    width: clamp(16px, 1.66656vw, 64px);
+    height: clamp(16px, 1.66656vw, 64px);
+    top: clamp(5px, 0.5208vw, 20px);
+    left: clamp(-15px, -1.5624vw, -60px);
+    @apply rounded-md;
+    @apply bg-red-400;
+  }
+
+  &__upper {
+    @apply text-xs;
+    @apply ml-4;
+    @apply text-functional-gray;
+  }
+
+  &__bubble {
+    width: fit-content;
+    display: inline;
+    @apply text-sm;
+    @apply p-2;
+    @apply pl-4;
+    @apply pr-4;
+    @apply text-secondary;
+    @apply bg-primary-TRANSPARENT;
+    @apply rounded-xl;
+  }
+}

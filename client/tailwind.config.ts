@@ -19,6 +19,7 @@ const config: Config = {
         },
         functional: {
           DEFAULT: "#F93A00",
+          gray: "rgba(26, 26, 26, 0.50)",
           LIGHT: "#FFF3EF", // Light theme color
           dark: "#008BA3", // Dark theme variant
         },
