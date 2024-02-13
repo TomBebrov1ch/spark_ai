@@ -1,0 +1,19 @@
+.registration_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__logo {
+        width: clamp(68px, 7.08288vw, 272px);
+        height: clamp(68px, 7.08288vw, 272px);
+        @apply mt-16
+    }
+
+    &__greeting {
+        @apply text-secondary;
+        font-weight: 700;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(16px, 1.66656vw, 64px);
+    }
+}
