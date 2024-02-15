@@ -1,17 +1,11 @@
-.input {
+.button {
     width: clamp(162.5px, 16.926000000000002vw, 650px);
     height: clamp(25px, 2.604vw, 100px);
     border-radius: 6px;
     border: 1px solid rgba(255, 147, 114, 0.50);
-    @apply mt-3;
+    @apply mt-6;
     font-family: "Inter", sans-serif;
     font-weight: 100;
-    text-indent: clamp(8px, 0.83328vw, 32px);
-}
-
-.input::placeholder {
-    font-family: "Inter", sans-serif;
-    font-size: clamp(8px, 0.83328vw, 32px);
-    font-weight: 400;
-    color: #1A1A1A80;
+    @apply bg-primary;
+    @apply text-primary-ALMOST_WHITE;
 }
